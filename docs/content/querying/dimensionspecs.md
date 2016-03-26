@@ -351,6 +351,16 @@ Returns the dimension value formatted according to the given format string.
 
 For example if you want to concat "[" and "]" before and after the actual dimension value, you need to specify "[%s]" as format string.
 
+### Reflection Extraction Function
+
+Reflection based extraction enabling any Java custom code
+
+```json
+{ "type" : "reflection",
+  "className" : <class name>,
+  "constructorParams" : <constructor parameters> (optional)}
+```
+
 ### Filtered DimensionSpecs
 
 These are only valid for multi-value dimensions. If you have a row in druid that has a multi-value dimension with values ["v1", "v2", "v3"] and you send a groupBy/topN query grouping by that dimension with [query filter](filters.html) for value "v1". In the response you will get 3 rows containing "v1", "v2" and "v3". This behavior might be unintuitive for some use cases.

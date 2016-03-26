@@ -34,7 +34,7 @@ import javax.annotation.Nullable;
 
 /**
  */
-class DimensionPredicateFilter implements Filter
+public class DimensionPredicateFilter implements Filter
 {
   private final String dimension;
   private final Predicate<String> predicate;

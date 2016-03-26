@@ -39,7 +39,8 @@ import io.druid.query.lookup.LookupExtractionFn;
     @JsonSubTypes.Type(name = "cascade", value = CascadeExtractionFn.class),
     @JsonSubTypes.Type(name = "stringFormat", value = StringFormatExtractionFn.class),
     @JsonSubTypes.Type(name = "upper", value = UpperExtractionFn.class),
-    @JsonSubTypes.Type(name = "lower", value = LowerExtractionFn.class)
+    @JsonSubTypes.Type(name = "lower", value = LowerExtractionFn.class),
+    @JsonSubTypes.Type(name = "reflection", value = ReflectionExtractionFn.class)
 })
 /**
  * An ExtractionFn is a function that can be used to transform the values of a column (typically a dimension)

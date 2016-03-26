@@ -36,9 +36,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @JsonSubTypes.Type(name="javascript", value=JavaScriptDimFilter.class),
     @JsonSubTypes.Type(name="spatial", value=SpatialDimFilter.class),
     @JsonSubTypes.Type(name="in", value=InDimFilter.class),
-    @JsonSubTypes.Type(name="bound", value=BoundDimFilter.class)
-
+    @JsonSubTypes.Type(name="bound", value=BoundDimFilter.class),
+    @JsonSubTypes.Type(name="reflection", value=ReflectionDimFilter.class)
 })
+
 public interface DimFilter
 {
   public byte[] getCacheKey();

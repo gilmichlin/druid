@@ -270,3 +270,22 @@ Now suppose that the lower bound is `110` the filter will not match (`110 < 10K`
 |type|This String should always be "contains".|yes|
 |value|A String value to run the search over.|yes|
 |caseSensitive|Whether two string should be compared as case sensitive or not|yes|
+
+
+### Reflection filter
+
+Reflection based filter enabling any custom Java code
+
+```json
+{
+    "type": "reflection",
+    "className": "com.bla.FilterClassName",
+    "constructorParams": ["P1", "P2"]
+}
+```
+
+|property|description|required?|
+|--------|-----------|---------|
+|type|This String should always be "reflection".|yes|
+|className|class name in external Jar.|yes|
+|constructorParams|optional constructor parameters.|no|

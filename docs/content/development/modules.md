@@ -16,6 +16,8 @@ Druid's extensions leverage Guice in order to add things at runtime.  Basically,
 1. Add Complex metrics
 1. Add new Query types
 1. Add new Jersey resources
+1. Add new Custom Filter
+1. Add new Custom Extraction
 1. Bundle your extension with all the other Druid extensions
 
 Extensions are added to the system via an implementation of `io.druid.initialization.DruidModule`.
@@ -177,6 +179,17 @@ Adding new Jersey resources to a module requires calling the following code to b
 ```java
 Jerseys.addResource(binder, NewResource.class);
 ```
+### Adding new Custom Filter
+
+Adding new Custom Filter require the use of reflection based filter
+extend ExternalReflectionFilter and implement the Filter interface
+
+### Adding new Custom Filter
+
+Adding new Custom Filter require the use of reflection based extraction
+extend ExternalReflectionExtraction and implement the abstract methods
+
+
 
 ### Bundle your extension with all the other Druid extensions
 

@@ -30,6 +30,7 @@ import io.druid.query.filter.InDimFilter;
 import io.druid.query.filter.JavaScriptDimFilter;
 import io.druid.query.filter.NotDimFilter;
 import io.druid.query.filter.OrDimFilter;
+import io.druid.query.filter.ReflectionDimFilter;
 import io.druid.query.filter.RegexDimFilter;
 import io.druid.query.filter.SearchQueryDimFilter;
 import io.druid.query.filter.SelectorDimFilter;
@@ -115,6 +116,8 @@ public class Filters
       filter = new OrFilter(listFilters);
     } else if (dimFilter instanceof BoundDimFilter) {
       filter = new BoundFilter((BoundDimFilter) dimFilter);
+    } else if (dimFilter instanceof ReflectionDimFilter) {
+      filter = new ReflectionFilter((ReflectionDimFilter) dimFilter);
     }
 
     return filter;
